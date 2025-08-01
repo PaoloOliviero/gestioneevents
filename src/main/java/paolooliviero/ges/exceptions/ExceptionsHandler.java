@@ -4,6 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import paolooliviero.ges.payloads.ErrorsDTO;
+import paolooliviero.ges.payloads.ErrorsWithListDTO;
 
 import java.time.LocalDateTime;
 

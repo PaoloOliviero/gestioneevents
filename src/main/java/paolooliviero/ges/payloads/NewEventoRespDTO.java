@@ -1,6 +1,15 @@
 package paolooliviero.ges.payloads;
 
-public record NewEventoRespDTO (int eventoId)  {
+import paolooliviero.ges.entities.Utente;
+
+public record NewEventoRespDTO (
+        int eventoId,
+        String titolo,
+        String Descrizione,
+        String Luogo,
+        int numeropostidisponibili,
+        Utente utente
+)  {
 
 
 }

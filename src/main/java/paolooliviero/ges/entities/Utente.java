@@ -23,7 +23,7 @@ import paolooliviero.ges.Enum.Ruolo;
         private Ruolo ruolo;
 
 
-    public Utente(String name, String surname, String username, String password, String email, Ruolo ruolo) {
+    public Utente(String name, String surname, String password, String email, Ruolo ruolo) {
             this.name = name;
             this.surname = surname;
             this.password = password;

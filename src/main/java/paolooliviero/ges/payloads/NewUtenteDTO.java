@@ -3,6 +3,7 @@ package paolooliviero.ges.payloads;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+import paolooliviero.ges.Enum.Ruolo;
 
 public record NewUtenteDTO(
         @NotEmpty(message = "Il nome è obbligatorio!")
@@ -17,4 +18,9 @@ public record NewUtenteDTO(
         @NotEmpty(message = "La password è obbligatoria!")
         @Size(min = 4)
         //@Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{4,}$", message = "La password deve contenere: 1 carat maiuscolo, uno minuscolo.....")
-        String password) { }
+        String password,
+        @NotEmpty(message = "La password è obbligatoria!")
+        Ruolo ruolo)
+
+{ }
+
