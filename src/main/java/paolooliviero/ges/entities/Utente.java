@@ -1,15 +1,13 @@
 package paolooliviero.ges.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
+import paolooliviero.ges.Enum.Ruolo;
 
 
-    @Entity
+@Entity
     @Getter
     @AllArgsConstructor
     @ToString
@@ -19,14 +17,19 @@ import lombok.ToString;
        private int id;
        private String name;
        private String surname;
-        private String username;
         private String password;
+        private String email;
+        @Enumerated(EnumType.STRING)
+        private Ruolo ruolo;
 
-        public Utente(String name, String surname, String username, String password) {
+
+    public Utente(String name, String surname, String username, String password, String email, Ruolo ruolo) {
             this.name = name;
             this.surname = surname;
-            this.username = username;
             this.password = password;
+            this.email = email;
+            this.ruolo = ruolo;
+
         }
 
         public String getName() {
@@ -45,15 +48,23 @@ import lombok.ToString;
             this.surname = surname;
         }
 
-        public String getUsername() {
-            return username;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setUsername(String username) {
-            this.username = username;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-        public String getPassword() {
+    public Ruolo getRuolo() {
+        return ruolo;
+    }
+
+    public void setRuolo(Ruolo ruolo) {
+        this.ruolo = ruolo;
+    }
+
+    public String getPassword() {
             return password;
         }
 
@@ -65,14 +76,15 @@ import lombok.ToString;
             return id;
         }
 
-        @Override
-        public String toString() {
-            return "Utente{" +
-                    "name='" + name + '\'' +
-                    ", surname='" + surname + '\'' +
-                    ", username='" + username + '\'' +
-                    ", password='" + password + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Utente{" +
+                "ruolo=" + ruolo +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
+}
 

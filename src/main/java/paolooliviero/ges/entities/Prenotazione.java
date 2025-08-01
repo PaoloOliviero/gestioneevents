@@ -9,7 +9,7 @@ import lombok.Setter;
 @Table
 @Getter
 @Setter
-public class prenotazione {
+public class Prenotazione {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,7 +19,7 @@ public class prenotazione {
     @JoinColumn  (name= "utente_id")
     private Utente utente;
 
-    public prenotazione(Evento evento, Utente utente) {
+    public Prenotazione(Evento evento, Utente utente) {
         this.evento = evento;
         this.utente = utente;
     }
